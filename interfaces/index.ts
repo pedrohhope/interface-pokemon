@@ -17,6 +17,12 @@ export interface IPokemonData {
     stats: Stat[]
     types: Type[]
     weight: number
+    sprite: string;
+    typeOne:string;
+    typeTwo:string;
+    abilityOne:string;
+    abilityTwo:string;
+    abilityThree:string;
   }
   
   export interface Ability {

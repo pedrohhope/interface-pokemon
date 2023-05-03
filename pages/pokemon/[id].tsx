@@ -1,12 +1,13 @@
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
-import axios from "axios";
 import { IPokemonData } from "@/interfaces";
 import { Endpoints, api } from "@/endpoints";
+import axios from "axios";
+import PokemonStatus from '@/components/pokemonstatus/index'
 
 export default function Status() {
   const [pokemon, setPokemon] = useState<IPokemonData>();
-  console.log(pokemon);
+    console.log(pokemon);
 
   const router = useRouter();
 
@@ -15,7 +16,6 @@ export default function Status() {
       return;
     }
     const data = await Endpoints.pokemonStatus(router.query.id as string);
-
     setPokemon(data);
   }, [router.query.id]);
 
@@ -24,15 +24,16 @@ export default function Status() {
   }, [getApi]);
 
   return (
-    <>
-      <p>{pokemon?.name}</p>
-      <img src={pokemon?.sprites.front_default}></img>
-      <img src={pokemon?.sprites.back_default}></img>
-      <img src={pokemon?.sprites.front_shiny}></img>
-      <img src={pokemon?.sprites.back_shiny}></img>
-      <p>{pokemon?.abilities[0]?.ability.name}</p>
-      <p>{pokemon?.abilities[1]?.ability.name}</p>
-      <p>{pokemon?.abilities[2]?.ability.name}</p>
-    </>
+    <PokemonStatus 
+        name={pokemon?.name.toUpperCase()}
+        id={pokemon?.id}
+        sprite={pokemon?.sprites.other.dream_world.front_default}
+        typeOne={pokemon?.types[0].type.name}
+        typeTwo={pokemon?.types[1]?.type.name}
+        abilityOne={pokemon?.abilities[0]?.ability.name}
+        abilityTwo={pokemon?.abilities[1]?.ability.name}
+        abilityThree={pokemon?.abilities[2]?.ability.name} 
+        abilities={[]} base_experience={0} forms={[]} game_indices={[]} height={0} held_items={[]} is_default={false} location_area_encounters={""} moves={[]} order={0} past_types={[]} species={undefined} sprites={undefined} stats={[]} types={[]} weight={0}  
+    />
   );
 }
