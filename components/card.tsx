@@ -17,7 +17,7 @@ export default function Card(props: ICards) {
       href={`pokemon/${props.routerLink}`}
       className="animate-[pulse_1s] flex h-72 lg:flex-row flex-col lg:items-center gap-4 lg:h-60 w-full shadow-slate-200 shadow-lg rounded-lg hover:-translate-y-2 duration-150 cursor-pointer"
     >
-      <div className="h-32 w-full lg:w-40 lg:h-full flex items-center lg:justify-center bg-teal-300 rounded-lg">
+      <div className="h-32 w-full lg:w-40 lg:h-full flex items-center lg:justify-center bg-blue-900 rounded-lg">
         <img src={props.pokemonImage} alt="" className="w-20 ml-5 lg:ml-0 lg:w-4/5" />
       </div>
       <div className="flex ml-5 space-x-10 lg:ml-0">
@@ -28,9 +28,9 @@ export default function Card(props: ICards) {
           </div>
           <div className="flex flex-col gap-2">
             <p>Powers: </p>
-            <p className="bg-teal-300 text-white mr-3 font-bold pl-1">{props.powerOne}</p>
-            <p className="bg-teal-300 text-white mr-2 font-bold pl-1">{props.powerTwo}</p>
-            <p className="bg-teal-300 text-white mr-1 font-bold pl-1">{props.powerThree}</p>
+            <p className="bg-blue-500 text-white mr-3 font-bold pl-3 rounded-lg">{props.powerOne}</p>
+            <p className="bg-blue-500 text-white mr-2 font-bold pl-3 rounded-lg">{props.powerTwo}</p>
+            <p className="bg-blue-500 text-white mr-1 font-bold pl-3 rounded-lg">{props.powerThree}</p>
           </div>
         </div>
 

@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { IPokemonData } from "@/interfaces";
-import { Endpoints, api } from "@/endpoints";
-import axios from "axios";
+import { Endpoints } from "@/endpoints";
 import PokemonStatus from '@/components/pokemonstatus/index'
 
 export default function Status() {
@@ -24,6 +23,7 @@ export default function Status() {
   }, [getApi]);
 
   return (
+    <div className="w-screen h-screen bg-blue-600">
     <PokemonStatus 
         name={pokemon?.name.toUpperCase()}
         id={pokemon?.id}
@@ -35,5 +35,6 @@ export default function Status() {
         abilityThree={pokemon?.abilities[2]?.ability.name} 
         abilities={[]} base_experience={0} forms={[]} game_indices={[]} height={0} held_items={[]} is_default={false} location_area_encounters={""} moves={[]} order={0} past_types={[]} species={undefined} sprites={undefined} stats={[]} types={[]} weight={0}  
     />
+    </div>
   );
 }
