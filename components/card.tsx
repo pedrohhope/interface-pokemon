@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface ICards {
   pokemonName: string;
@@ -19,7 +20,7 @@ export default function Card(props: ICards) {
       className="animate-[pulse_1s] flex h-72 lg:flex-row flex-col lg:items-center gap-4 lg:h-60 w-full shadow-slate-200 shadow-lg rounded-lg hover:-translate-y-2 duration-150 cursor-pointer"
     >
       <div className={`h-32 w-full lg:w-40 lg:h-full flex items-center lg:justify-center bg-${props.powerOne} rounded-lg`}>
-        <img src={props.pokemonImage} alt="" className="w-20 ml-5 lg:ml-0 lg:w-4/5" />
+        <Image src={props.pokemonImage} alt="" className="w-20 ml-5 lg:ml-0 lg:w-4/5" />
       </div>
       <div className="flex ml-5 space-x-10 lg:ml-0">
         <div>
@@ -36,7 +37,7 @@ export default function Card(props: ICards) {
         </div>
 
         <div className="flex items-end  w-full">
-          <img src={props.pokemonGif} alt="" className="lg:w-full"/>
+          <Image src={props.pokemonGif} alt="" className="lg:w-full"/>
         </div>
       </div>
     </Link>

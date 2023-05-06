@@ -1,12 +1,12 @@
 import { IPokemonData } from "@/interfaces/index";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function PokemonStatus(props: IPokemonData) {
   return (
     <div className="w-full">
       <div className="flex relative justify-center pokemon-animation h-[25rem]">
         <div className="z-10 ml-96 pokemon-img">
-          <img src={props.sprite} className="min-w-[190px] max-w-[250px]"></img>
+          <Image src={props.sprite} className="min-w-[190px] max-w-[250px]" alt={props.name} />
         </div>
 
         <div className="font-bold absolute rounded-lg pokemon-name">
