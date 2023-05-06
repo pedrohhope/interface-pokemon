@@ -1,35 +1,25 @@
 import { IPokemonData } from "@/interfaces/index";
+import Link from "next/link";
 
 export default function PokemonStatus(props: IPokemonData) {
   return (
-    <div>
-      <div className="flex flex-col items-center">
-
-
-        <div className="z-10 mt-10 animate-[pulse_1s]">
-          <img src={props.sprite} className="min-w-[150px] max-w-[200px]"></img>
+    <div className="w-full">
+      <div className="flex relative justify-center pokemon-animation h-[25rem]">
+        <div className="z-10 ml-96 pokemon-img">
+          <img src={props.sprite} className="min-w-[190px] max-w-[250px]"></img>
         </div>
 
-        <div className="font-bold rounded-lg">
-          <h1 className="text-6xl text-white">{props.name} N°{props.id}</h1>
+        <div className="font-bold absolute rounded-lg pokemon-name">
+          <h1 className="text-9xl text-white">{props.name}</h1>
         </div>
-        
       </div>
-      <div className="flex gap-10 m-20">
-        <div className="flex flex-col gap-5 text-5xl font-bold ">
-          <h3 className="text-white">Types</h3>
-          <div className="flex text-center gap-3">
-            <p className="bg-blue-950 text-3xl text-white rounded-lg">{props.typeOne}</p>
-            <p className="bg-blue-950 text-3xl text-white rounded-lg">{props.typeTwo}</p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-5 text-5xl font-bold">
-          <h2 className="text-white">Abilities</h2>
-          <div className="flex text-center gap-3">
-            <p className="bg-blue-950 text-3xl text-white rounded-lg">{props.abilityOne}</p>
-            <p className="bg-blue-950 text-3xl text-white rounded-lg">{props.abilityTwo}</p>
-            <p className="bg-blue-950 text-3xl text-white rounded-lg">{props.abilityThree}</p>
-          </div>
+
+      <div className="m-10">
+        <h2 className="text-3xl font-bold text-stone-900">
+          Let's Go, {props.name}!
+        </h2>
+        <div>
+          <h4>Type</h4>
         </div>
       </div>
     </div>

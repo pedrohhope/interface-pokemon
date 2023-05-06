@@ -10,3 +10,68 @@ header{
   height: 400px;
   background-position: fixed;
 }
+
+.bg-rock {
+  background-color: rgb(148, 81, 81);
+}
+.bg-ghost {
+  background-color: rgb(247, 247, 247);
+}
+.bg-electric {
+  background-color: rgb(240, 240, 117);
+  color: black;
+}
+.bg-bug {
+  background-color: #f5ca8b;
+}
+.bg-poison {
+  background-color: #e0a7f6;
+}
+.bg-normal {
+  background-color: #F4F4F4;
+  color: black;
+}
+.bg-fairy {
+  background-color: rgba(255, 192, 203, 0.863);
+}
+.bg-fire {
+  background-color: #f59381;
+}
+.bg-grass {
+  background-color:#abf3a8;
+}
+.bg-water {
+  background-color:#8fcaf5;
+}
+.bg-flying{
+  background-color: rgb(241, 217, 151);
+}
+
+.bg-ground{
+  background-color: rgb(207, 158, 126);
+}
+
+
+.pokemon-animation .pokemon-name {
+  display: flex;
+  align-items: center;
+  top: 0;
+  transform: translateY(50%);
+  height: 218px;
+  transition: 0.5s;
+}
+
+.pokemon-animation:hover .pokemon-name{
+  transform: translateY(70%)
+}
+
+
+.pokemon-animation .pokemon-img {
+  top: 0;
+  transform: translateY(20%);
+  transition: 0.5s;
+}
+
+.pokemon-animation:hover .pokemon-img{
+   transform: translateY(3%);
+}

@@ -6,7 +6,6 @@ import PokemonStatus from '@/components/pokemonstatus/index'
 
 export default function Status() {
   const [pokemon, setPokemon] = useState<IPokemonData>();
-    console.log(pokemon);
 
   const router = useRouter();
 
@@ -23,7 +22,7 @@ export default function Status() {
   }, [getApi]);
 
   return (
-    <div className="w-screen h-screen bg-blue-600">
+    <div className={`w-screen h-screen bg-${pokemon?.types[0].type.name}`}>
     <PokemonStatus 
         name={pokemon?.name.toUpperCase()}
         id={pokemon?.id}
