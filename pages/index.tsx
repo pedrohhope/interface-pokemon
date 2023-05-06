@@ -1,6 +1,5 @@
 import Header from "../components/header";
 import Card from "../components/card";
-import {} from "styled-components";
 import { IPokemonData } from "@/interfaces";
 import { Endpoints } from "@/endpoints";
 import React from "react";
