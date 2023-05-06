@@ -16,7 +16,7 @@ export default function PokemonStatus(props: IPokemonData) {
 
       <div className="m-10">
         <h2 className="text-3xl font-bold text-stone-900">
-          Let's Go, {props.name}!
+         {`Let's`} Go, {props.name}!
         </h2>
         <div>
           <h4>Type</h4>
