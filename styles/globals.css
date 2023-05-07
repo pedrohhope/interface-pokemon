@@ -11,6 +11,11 @@ header{
   background-position: fixed;
 }
 
+img{
+  width: auto;
+  height: auto;
+}
+
 .bg-rock {
   background-color: rgb(148, 81, 81);
 }

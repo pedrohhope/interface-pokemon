@@ -21,6 +21,9 @@ export default function Status() {
     getApi();
   }, [getApi]);
 
+
+
+
   return (
     <div className={`w-screen h-screen bg-${pokemon?.types[0].type.name}`}>
     <PokemonStatus 

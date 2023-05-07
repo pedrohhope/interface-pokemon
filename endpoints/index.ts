@@ -11,7 +11,7 @@ export const api = axios.create({
 
 export class Endpoints {
   static pokemonList = async () => {
-    const { data } = await api.get("/pokemon?limit=50");
+    const { data } = await api.get("/pokemon?limit=20");
 
     const pokemonsData = await Promise.all(
       data.results.map(async (pokemon: IPokemonResult) => {
