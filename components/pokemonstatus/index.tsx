@@ -1,7 +1,6 @@
 import { IPokemonData } from "@/interfaces/index";
 import Image from "next/image";
 import { Suspense } from "react";
-import Loading from "../loading";
 
 export default function PokemonStatus(props: IPokemonData) {
   return (
