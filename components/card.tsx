@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 interface ICards {
   pokemonName: string;
@@ -10,6 +12,7 @@ interface ICards {
   powerTwo: string;
   powerThree: string;
   pokemonGif:any;
+  loading: boolean;
 }
 
 
@@ -17,14 +20,15 @@ export default function Card(props: ICards) {
   return (
     <Link
       href={`pokemon/${props.routerLink}`}
-      className="animate-[pulse_1s] flex h-72 lg:flex-row flex-col lg:items-center gap-4 lg:h-60 w-full shadow-slate-200 shadow-lg rounded-lg hover:-translate-y-2 duration-150 cursor-pointer"
+      className="flex h-full lg:flex-row flex-col lg:items-center gap-4 lg:h-60 w-full shadow-slate-200 shadow-lg rounded-lg hover:-translate-y-2 duration-150 cursor-pointer"
     >
-      <div className={`h-full w-full lg:pl-0 lg:w-36  flex items-center lg:justify-center bg-${props.powerOne} rounded-lg pl-5`}>
+      <div className={`h-full w-full lg:pl-0 lg:w-36 flex items-center lg:justify-center bg-${props.powerOne} rounded-lg pl-5`}>
         <div className={`h-32 w-24 lg:w-40 flex items-center lg:justify-center `}>
-        <Image src={props.pokemonImage} alt={props.pokemonName} width={100} height={100} priority={true}/>
+        {!props.loading && <Image src={props.pokemonImage} alt={props.pokemonName} width={100} height={100} loading="lazy"/>}
+        {props.loading && <Skeleton  count={1}  width={150} height={250} />}
         </div>
       </div>
-      <div className="flex ml-5 space-x-10 lg:ml-0 h-full">
+      <div className="flex ml-5 space-x-10 lg:ml-0 h-full mt-5">
         <div>
           <div>
             <h2 className="text-2xl">{props.pokemonName}</h2>

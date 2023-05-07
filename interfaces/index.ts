@@ -23,6 +23,7 @@ export interface IPokemonData {
     abilityOne:string;
     abilityTwo:string;
     abilityThree:string;
+    loading?: boolean;
   }
   
   export interface Ability {

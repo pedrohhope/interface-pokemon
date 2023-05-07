@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 
-header{
-  background-image: url(/592678.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 400px;
-  background-position: fixed;
-}
-
 img{
   width: auto;
   height: auto;
