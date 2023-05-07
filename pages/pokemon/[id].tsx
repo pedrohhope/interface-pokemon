@@ -2,31 +2,31 @@ import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { IPokemonData } from "@/interfaces";
 import { Endpoints } from "@/endpoints";
-import PokemonStatus from '@/components/pokemonstatus/index'
+import PokemonStatus from "@/components/pokemonstatus/index";
 
-export default function Status() {
-  const [pokemon, setPokemon] = useState<IPokemonData>();
+export async function getStaticProps({ params }) {
+  const data = await Endpoints.pokemonStatus(params.id);
 
-  const router = useRouter();
+  return {
+    props: {
+      pokemon: data,
+    },
+  };
+}
 
-  const getApi = useCallback(async () => {
-    if (!router.query.id) {
-      return;
-    }
-    const data = await Endpoints.pokemonStatus(router.query.id as string);
-    setPokemon(data);
-  }, [router.query.id]);
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
+}
 
-  useEffect(() => {
-    getApi();
-  }, [getApi]);
+// const data = await Endpoints.pokemonStatus(router.query.id as string);
 
-
-
-
+export default function Status({ pokemon }) {
   return (
     <div className={`w-screen h-screen bg-${pokemon?.types[0].type.name}`}>
-    <PokemonStatus 
+      <PokemonStatus
         name={pokemon?.name.toUpperCase()}
         id={pokemon?.id}
         sprite={pokemon?.sprites.other.dream_world.front_default}
@@ -34,9 +34,24 @@ export default function Status() {
         typeTwo={pokemon?.types[1]?.type.name}
         abilityOne={pokemon?.abilities[0]?.ability.name}
         abilityTwo={pokemon?.abilities[1]?.ability.name}
-        abilityThree={pokemon?.abilities[2]?.ability.name} 
-        abilities={[]} base_experience={0} forms={[]} game_indices={[]} height={0} held_items={[]} is_default={false} location_area_encounters={""} moves={[]} order={0} past_types={[]} species={undefined} sprites={undefined} stats={[]} types={[]} weight={0}  
-    />
+        abilityThree={pokemon?.abilities[2]?.ability.name}
+        abilities={[]}
+        base_experience={0}
+        forms={[]}
+        game_indices={[]}
+        height={0}
+        held_items={[]}
+        is_default={false}
+        location_area_encounters={""}
+        moves={[]}
+        order={0}
+        past_types={[]}
+        species={undefined}
+        sprites={undefined}
+        stats={[]}
+        types={[]}
+        weight={0}
+      />
     </div>
   );
 }
