@@ -2,52 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-img{
+img {
   width: auto;
   height: auto;
 }
-
-.bg-rock {
-  background-color: rgb(148, 81, 81);
-}
-.bg-ghost {
-  background-color: rgb(247, 247, 247);
-}
-.bg-electric {
-  background-color: rgb(240, 240, 117);
-  color: black;
-}
-.bg-bug {
-  background-color: #f5ca8b;
-}
-.bg-poison {
-  background-color: #e0a7f6;
-}
-.bg-normal {
-  background-color: #F4F4F4;
-  color: black;
-}
-.bg-fairy {
-  background-color: rgba(255, 192, 203, 0.863);
-}
-.bg-fire {
-  background-color: #f59381;
-}
-.bg-grass {
-  background-color:#abf3a8;
-}
-.bg-water {
-  background-color:#8fcaf5;
-}
-.bg-flying{
-  background-color: rgb(241, 217, 151);
-}
-
-.bg-ground{
-  background-color: rgb(207, 158, 126);
-}
-
 
 .pokemon-animation .pokemon-name {
   display: flex;
@@ -58,17 +16,78 @@ img{
   transition: 0.5s;
 }
 
-.pokemon-animation:hover .pokemon-name{
-  transform: translateY(70%)
+.pokemon-animation:hover .pokemon-name {
+  transform: translateY(70%);
 }
-
 
 .pokemon-animation .pokemon-img {
   top: 0;
-  transform: translateY(20%);
+  transform: translateY(10%);
   transition: 0.5s;
 }
 
-.pokemon-animation:hover .pokemon-img{
-   transform: translateY(3%);
+.pokemon-animation:hover .pokemon-img {
+  transform: translateY(-10%);
+}
+
+.bg-rock {
+  background-color: #b6a136;
+}
+.bg-ghost {
+  background-color: #735797;
+}
+.bg-electric {
+  background-color: #f7d02c;
+  color: black;
+}
+.bg-bug {
+  background-color: #a6b91a;
+}
+.bg-poison {
+  background-color: #a33ea1;
+}
+.bg-normal {
+  background-color: #a8a77a;
+  color: black;
+}
+.bg-fairy {
+  background-color: #d685ad;
+}
+.bg-fire {
+  background-color: #ee8130;
+}
+.bg-grass {
+  background-color: #7ac74c;
+}
+.bg-water {
+  background-color: #6390f0;
+}
+.bg-flying {
+  background-color: #a98ff3;
+}
+.bg-fighting {
+  background-color: #c22e28;
+}
+.bg-ice {
+  background-color: #96d9d6;
+}
+
+.bg-ground {
+  background-color: #e2bf65;
+}
+
+.bg-dragon {
+  background-color: #6f35fc;
+}
+
+.bg-dark {
+  background-color: #705746;
+}
+
+.bg-steel {
+  background-color: #b7b7ce;
+}
+
+.bg-psychic {
+  background-color: #f95587;
 }

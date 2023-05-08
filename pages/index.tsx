@@ -6,18 +6,18 @@ import React, { useEffect, useState } from "react";
 import { infiniteScroll } from "@/components/infinitescroll";
 
 export default function Home() {
-
   const [pokemons, setPokemons] = useState<IPokemonData[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [limits, setLimits] = useState(14)
 
   useEffect(() => {
-    Endpoints.pokemonList(currentPage).then(setPokemons);
+    Endpoints.pokemonList(currentPage, limits).then(setPokemons);
   }, [currentPage]);
 
   useEffect(() => {
-    if(!document) return;
+    if (!document) return;
     const sentinel = document.querySelector("#sentinel");
-    infiniteScroll(setCurrentPage, sentinel);
+    infiniteScroll(setCurrentPage, setLimits ,sentinel);
   }, []);
 
   return (

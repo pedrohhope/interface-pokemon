@@ -23,7 +23,7 @@ export default function Header(props: IHeader) {
       </div>
 
       <div className={`${myFont.className} mt-10 md:mt-20 absolute`}>
-        <h1 className="text-7xl md:text-9xl text-[#FECA1B]">{props.title}</h1>
+        <h1 className="text-7xl md:text-9xl text-[#FECA1B] ">{props.title}</h1>
       </div>
     </header>
   );

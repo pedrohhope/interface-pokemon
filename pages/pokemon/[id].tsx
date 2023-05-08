@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 
 export default function Status({ pokemon }) {
   return (
-    <div className={`w-screen h-screen bg-${pokemon?.types[0].type.name}`}>
+    <div className={`w-full h-full bg-${pokemon?.types[0].type.name}`}>
       <PokemonStatus
         name={pokemon?.name.toUpperCase()}
         id={pokemon?.id}
@@ -32,20 +32,20 @@ export default function Status({ pokemon }) {
         abilityOne={pokemon?.abilities[0]?.ability.name}
         abilityTwo={pokemon?.abilities[1]?.ability.name}
         abilityThree={pokemon?.abilities[2]?.ability.name}
-        abilities={[]}
+        abilities={pokemon?.abilities}
         base_experience={0}
-        forms={[]}
-        game_indices={[]}
+        forms={pokemon?.forms}
+        game_indices={pokemon?.game_indices}
         height={0}
-        held_items={[]}
+        held_items={pokemon?.held_items}
         is_default={false}
-        location_area_encounters={""}
-        moves={[]}
+        location_area_encounters={pokemon?.location_area_encounters}
+        moves={pokemon?.moves}
         order={0}
         past_types={[]}
-        species={undefined}
+        species={pokemon?.species}
         sprites={undefined}
-        stats={[]}
+        stats={pokemon?.stats}
         types={[]}
         weight={0}
       />
