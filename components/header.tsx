@@ -16,7 +16,7 @@ export default function Header(props: IHeader) {
           width={0}
           height={0}
           sizes="100vw"
-          style={{ width: "100%", height: "100%" }} 
+          style={{ width: "100%", height: "100%" }}
           loading="lazy"
           // optional
         />
