@@ -4,15 +4,14 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 interface ICards {
-  pokemonName: string;
-  pokemonImage: any;
-  gameIndex: number;
-  routerLink: any;
-  powerOne: string;
-  powerTwo: string;
-  powerThree: string;
-  pokemonGif: any;
-  loading: boolean;
+  types?: any[];
+  pokemonName?: string;
+  pokemonImage?: any;
+  gameIndex?: number;
+  routerLink?: any;
+  powerOne?: string;
+  pokemonGif?: any;
+  loading?: boolean;
 }
 
 export default function Card(props: ICards) {
@@ -46,30 +45,23 @@ export default function Card(props: ICards) {
             <p>EXP: {props.gameIndex}</p>
           </div>
           <div className="flex flex-col gap-2">
-            <p>Powers: </p>
-            <p
-              className={`text-white text-center font-bold rounded-lg bg-${props.powerOne}`}
-            >
-              {props.powerOne}
-            </p>
-            <p
-              className={`text-white text-center mr-3 font-bold rounded-lg bg-${props.powerTwo}`}
-            >
-              {props.powerTwo}
-            </p>
-            <p
-              className={`text-white text-center mr-2 font-bold rounded-lg bg-${props.powerThree}`}
-            >
-              {props.powerThree}
-            </p>
+            <p>Types: </p>
+
+            {props.types?.map((type: any) => (
+              <p className={`text-white pl-2 font-bold rounded-lg bg-${type.type.name}`} key={Math.random() * 10}>
+                {type.type.name}
+              </p>
+            ))}
+            
           </div>
         </div>
 
         <div className="flex items-end mb-5">
-          <img
+          <Image
             src={props.pokemonGif}
             alt={props.pokemonName}
-            className="lg:w-full"
+            width={100}
+            height={100}
           />
         </div>
       </div>

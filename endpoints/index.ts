@@ -10,8 +10,10 @@ export const api = axios.create({
 });
 
 export class Endpoints {
-  static pokemonList = async (offset: number, limits: number) => {
-    const { data } = await api.get(`/pokemon?offset=${offset}&limit=${limits}`);
+  static pokemonList = async (page: number) => {
+    const offset = page === 1 ? 0 : (page - 1) * 10;
+
+    const { data } = await api.get(`/pokemon?offset=${offset}&limit=10`);
 
     const pokemonsData = await Promise.all(
       data.results.map(async (pokemon: IPokemonResult) => {

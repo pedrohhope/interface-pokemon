@@ -1,28 +1,23 @@
 export interface IPokemonData {
-  abilities: Ability[];
-  base_experience: number;
-  forms: Form[];
-  game_indices: Index[];
-  height: number;
-  held_items: any[];
-  id: number;
-  is_default: boolean;
-  location_area_encounters: string;
-  moves: Mfe[];
+  abilities?: Ability[];
+  base_experience?: number;
+  forms?: Form[];
+  game_indices?: Index[];
+  height?: number;
+  held_items?: any[];
+  id?: number;
+  is_default?: boolean;
+  location_area_encounters?: string;
+  moves?: Mfe[];
   name: string;
-  order: number;
-  past_types: any[];
-  species: Species;
-  sprites: Sprites;
-  stats: Stat[];
-  types: Type[];
-  weight: number;
-  sprite: string;
-  typeOne: string;
-  typeTwo: string;
-  abilityOne: string;
-  abilityTwo: string;
-  abilityThree: string;
+  order?: number;
+  past_types?: any[];
+  species?: Species;
+  sprites?: Sprites;
+  stats?: Stat[];
+  types?: Type[];
+  weight?: number;
+  sprite?: string;
   loading?: boolean;
 }
 

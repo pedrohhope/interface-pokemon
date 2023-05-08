@@ -30,6 +30,15 @@ img {
   transform: translateY(-10%);
 }
 
+.header-app{
+  position: relative;
+  max-height: 300px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .bg-rock {
   background-color: #b6a136;
 }
@@ -38,7 +47,6 @@ img {
 }
 .bg-electric {
   background-color: #f7d02c;
-  color: black;
 }
 .bg-bug {
   background-color: #a6b91a;
@@ -48,7 +56,6 @@ img {
 }
 .bg-normal {
   background-color: #a8a77a;
-  color: black;
 }
 .bg-fairy {
   background-color: #d685ad;
