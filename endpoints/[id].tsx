@@ -27,11 +27,6 @@ export default function Status({ pokemon }) {
         name={pokemon?.name.toUpperCase()}
         id={pokemon?.id}
         sprite={pokemon?.sprites.other.dream_world.front_default}
-        typeOne={pokemon?.types[0].type.name}
-        typeTwo={pokemon?.types[1]?.type.name}
-        abilityOne={pokemon?.abilities[0]?.ability.name}
-        abilityTwo={pokemon?.abilities[1]?.ability.name}
-        abilityThree={pokemon?.abilities[2]?.ability.name}
         abilities={[]}
         base_experience={0}
         forms={[]}
