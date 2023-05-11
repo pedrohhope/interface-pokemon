@@ -1,4 +1,5 @@
 export interface IPokemonData {
+  pokemonGif: string | StaticImport;
   abilities?: Ability[];
   base_experience?: number;
   forms?: Form[];
@@ -19,6 +20,7 @@ export interface IPokemonData {
   weight?: number;
   sprite?: string;
   loading?: boolean;
+  typeOne: string;
 }
 
 export interface Ability {

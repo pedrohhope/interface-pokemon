@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 }
 
 export default function Status({ pokemon }) {
+  console.log(pokemon)
 
   return (
     <div className={`w-full h-full bg-${pokemon?.types[0].type.name}`}>
@@ -27,6 +28,13 @@ export default function Status({ pokemon }) {
         id={pokemon?.id}
         sprite={pokemon?.sprites.other.dream_world.front_default}
         abilities={pokemon?.abilities}
+        typeOne={pokemon?.types[0].type.name}
+        types={pokemon.types}
+        stats={pokemon.stats}
+        pokemonGif={
+          pokemon.sprites?.versions["generation-v"]["black-white"].animated
+            .front_default
+        }
       />
     </div>
   );
