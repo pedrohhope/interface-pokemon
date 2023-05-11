@@ -1,5 +1,5 @@
 export interface IPokemonData {
-  pokemonGif: string | StaticImport;
+  pokemonGif: string;
   abilities?: Ability[];
   base_experience?: number;
   forms?: Form[];

@@ -79,7 +79,7 @@ export default function PokemonStatus(props: IPokemonData) {
                   <div>
                     <h3>STATS</h3>
                     {props.stats.map((stat) => (
-                      <div>
+                      <div key={Math.random() * 10}>
                         <p>{stat.stat.name}</p>
                         <p>{stat.base_stat}</p>
                       </div>

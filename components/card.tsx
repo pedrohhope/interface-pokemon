@@ -48,8 +48,8 @@ export default function Card(props: ICards) {
             <p>Types: </p>
 
             {props.types?.map((type: any) => (
-              <div className={`bg-${type.type.name} rounded-lg flex items-center`}>
-                <p className="text-white pl-2 font-bold"  key={props.pokemonName}>
+              <div className={`bg-${type.type.name} rounded-lg flex items-center`} key={Math.random() * 10}>
+                <p className="text-white pl-2 font-bold" key={Math.random() * 10}>
                   {type.type.name}
                 </p>
               </div>
