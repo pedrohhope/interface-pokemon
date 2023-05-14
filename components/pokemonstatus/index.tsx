@@ -26,25 +26,34 @@ export default function PokemonStatus(props: IPokemonData) {
         </div>
 
         <div className="font-bold absolute pokemon-name">
-          <h1 className="text-9xl text-white">{props.name}</h1>
+          <h1 className="text-[65px] md:text-9xl text-white">{props.name}</h1>
         </div>
       </div>
 
       <div className="flex justify-center">
         <div
-          className={`mt-[100px] w-full h-screen rounded-t-lg container mx-auto bg-slate-50 drop-shadow-2xl`}
+          className={`mt-[100px] w-full rounded-t-lg container mx-auto bg-slate-50 drop-shadow-2xl`}
         >
           <div className="m-10">
-            <div className="flex flex-col md:justify-between md:flex-row">
-              <div>
+            <div className="flex flex-col gap-5 md:justify-between md:flex-row">
+              <div className="flex flex-col gap-5">
                 <h2 className="text-3xl font-bold">
                   {`Let's`} Go, {props.name}!
                 </h2>
+                <Image
+                  src={props.pokemonGif}
+                  alt={props.name}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: "30%", height: "100%" }}
+                  loading="lazy"
+                />
                 <div>
                   <h3>ABILITIES</h3>
                   {props.abilities.map((ability: any) => (
                     <div
-                      className={`bg-${props.typeOne} p-3 w-40 rounded-lg`}
+                      className={`bg-${props.typeOne} p-3 w-40 rounded-lg text-white font-bold mt-2`}
                       key={Math.random() * 10}
                     >
                       <p>{ability.ability.name}</p>
@@ -55,7 +64,7 @@ export default function PokemonStatus(props: IPokemonData) {
                   <h3>TYPES</h3>
                   {props.types.map((type: any) => (
                     <div
-                      className={`bg-${type.type.name} p-3 w-40 rounded-lg text-white font-bold`}
+                      className={`bg-${type.type.name} p-3 w-40 rounded-lg text-white font-bold mt-2`}
                       key={Math.random() * 10}
                     >
                       <p>{type.type.name}</p>
@@ -66,21 +75,13 @@ export default function PokemonStatus(props: IPokemonData) {
 
               <div>
                 <div
-                  className={`flex justify-end bg-${props.typeOne} w-full h-full lg:h-96 md:full text-white`}
+                  className={`flex bg-${props.typeOne} w-full  md:w-[320px] h-full lg:h-full md:full text-white`}
                 >
-                  <div>
-                    <Image
-                      src={props.pokemonGif}
-                      alt={props.name}
-                      width={100}
-                      height={100}
-                    ></Image>
-                  </div>
-                  <div>
+                  <div className="m-5 font-bold">
                     <h3>STATS</h3>
                     {props.stats.map((stat) => (
                       <div key={Math.random() * 10}>
-                        <p>{stat.stat.name}</p>
+                        <p>{stat.stat.name.toLocaleUpperCase()}</p>
                         <p>{stat.base_stat}</p>
                       </div>
                     ))}

@@ -44,7 +44,7 @@ export default function Card(props: ICards) {
             <h2 className="text-2xl">{props.pokemonName}</h2>
             <p>EXP: {props.gameIndex}</p>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 mb-5">
             <p>Types: </p>
 
             {props.types?.map((type: any) => (

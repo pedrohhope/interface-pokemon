@@ -19,7 +19,6 @@ export async function getStaticPaths() {
 }
 
 export default function Status({ pokemon }) {
-  console.log(pokemon)
 
   return (
     <div className={`w-full h-full bg-${pokemon?.types[0].type.name}`}>
