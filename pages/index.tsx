@@ -28,7 +28,7 @@ export default function Home() {
             <React.Fragment>
               {[1, 2, 3].map(() => (
                 <Card
-                  key={Math.random() * 10}
+                  key=""
                   routerLink=""
                   pokemonName=""
                   pokemonImage=""
@@ -43,7 +43,7 @@ export default function Home() {
           )}
           {pokemons.map((pokemon: IPokemonData) => (
             <Card
-              key={Math.random() * 10}
+              key={pokemon.id}
               routerLink={pokemon.id}
               pokemonName={pokemon.name?.toUpperCase()}
               pokemonImage={pokemon.sprites?.other.dream_world.front_default}
