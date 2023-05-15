@@ -33,6 +33,6 @@ Abra o seu navegador e acesse o seguinte endereço: http://localhost:3000/.
 
 Agora você poderá visualizar a interface Pokémon em execução localmente em sua máquina.
 
-Este projeto é uma ótima oportunidade para aprender sobre o uso do Next.js e do Tailwind CSS na construção de interfaces web responsivas e eficientes. Sinta-se à vontade para explorar o código-fonte, fazer melhorias e contribuir para o projeto.
+Este projeto é uma ótima oportunidade para aprender sobre o uso do Next.js e do Tailwind CSS na construção de interfaces web responsivas e eficientes. Sinta-se à vontade para explorar o código-fonte.
 
 Nota: Certifique-se de ter o Node.js e o npm instalados em sua máquina antes de executar as etapas acima.
