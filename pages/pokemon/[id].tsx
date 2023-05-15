@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 export default function Status({ pokemon }) {
 
   return (
-    <div className={`w-full h-full bg-${pokemon?.types[0].type.name}`}>
+    <div>
       <PokemonStatus
         name={pokemon?.name.toUpperCase()}
         id={pokemon?.id}

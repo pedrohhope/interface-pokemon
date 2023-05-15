@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PokemonStatus(props: IPokemonData) {
   return (
-    <div className="w-full">
+    <div className={`w-full h-[400px] bg-${props.typeOne}`}>
       <div className="flex relative justify-center pokemon-animation h-[20rem]">
         <Link href={"/"}>
           <div className="absolute left-5 top-10">
@@ -26,13 +26,13 @@ export default function PokemonStatus(props: IPokemonData) {
         </div>
 
         <div className="font-bold absolute pokemon-name">
-          <h1 className="text-[65px] md:text-9xl text-white">{props.name}</h1>
+          <h1 className="text-[13vw] xl:text-9xl text-white">{props.name}</h1>
         </div>
       </div>
 
       <div className="flex justify-center">
         <div
-          className={`mt-[100px] w-full rounded-t-lg container mx-auto bg-slate-50 drop-shadow-2xl`}
+          className={`md:mt-[100px] mb-5 w-full rounded-t-lg container mx-auto bg-slate-50 drop-shadow-2xl`}
         >
           <div className="m-10">
             <div className="flex flex-col gap-5 md:justify-between md:flex-row">
@@ -46,7 +46,7 @@ export default function PokemonStatus(props: IPokemonData) {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  style={{ width: "30%", height: "100%" }}
+                  style={{ width: "50px", height: "100%" }}
                   loading="lazy"
                 />
                 <div>
