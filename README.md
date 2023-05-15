@@ -8,24 +8,28 @@ Para rodar o projeto localmente em sua máquina, siga as etapas abaixo:
 
 Clone este repositório para o seu ambiente de desenvolvimento:
 
-bash
+```bash
 Copy code
 git clone https://github.com/seu-usuario/interface-pokemon.git
 Acesse a pasta do projeto:
+```
 
-bash
+```bash
 Copy code
 cd interface-pokemon
 Instale as dependências do projeto:
-
+```
+```
 Copy code
 npm install
 Inicie o servidor de desenvolvimento:
+```
 
-arduino
+```arduino
 Copy code
 npm run dev
 Abra o seu navegador e acesse o seguinte endereço: http://localhost:3000/.
+```
 
 Agora você poderá visualizar a interface Pokémon em execução localmente em sua máquina.
 
