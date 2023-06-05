@@ -1,9 +1,4 @@
 <h1>Interface Pokemon</h1>
-
-Este repositório contém um projeto de interface web desenvolvido com Next.js e Tailwind CSS. A interface exibe informações sobre Pokémon e foi construída para ser utilizada no seguinte endereço: https://interface-pokemon.vercel.app/.
-
-<a href="https://interface-pokemon.vercel.app/"><img src="/readme-picture.png"></img></a>
-
 Tecnologias utilizadas:
 
 Next.js: Um framework de desenvolvimento web em React que permite a criação de aplicativos SSR (Server-Side Rendering) e SSG (Static Site Generation). Ele oferece uma experiência de desenvolvimento moderna, eficiente e escalável para a construção de aplicações web.
