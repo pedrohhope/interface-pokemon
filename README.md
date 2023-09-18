@@ -1,4 +1,5 @@
 <h1>Interface Pokemon</h1>
+<img src="./github-image/pokemon-interface.png" />
 Tecnologias utilizadas:
 
 Next.js: Um framework de desenvolvimento web em React que permite a criação de aplicativos SSR (Server-Side Rendering) e SSG (Static Site Generation). Ele oferece uma experiência de desenvolvimento moderna, eficiente e escalável para a construção de aplicações web.
@@ -31,3 +32,4 @@ Agora você poderá visualizar a interface Pokémon em execução localmente em 
 Este projeto é uma ótima oportunidade para aprender sobre o uso do Next.js e do Tailwind CSS na construção de interfaces web responsivas e eficientes. Sinta-se à vontade para explorar o código-fonte.
 
 Nota: Certifique-se de ter o Node.js e o npm instalados em sua máquina antes de executar as etapas acima.
+
