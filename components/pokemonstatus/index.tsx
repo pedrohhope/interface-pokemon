@@ -14,7 +14,7 @@ export default function PokemonStatus(props: IPokemonData) {
           </div>
         </Link>
         <div className="z-10 ml-96 pokemon-img">
-          <Image
+          <img
             src={props.sprite}
             alt={props.name}
             width={0}
@@ -40,7 +40,7 @@ export default function PokemonStatus(props: IPokemonData) {
                 <h2 className="text-3xl font-bold">
                   {`Let's`} Go, {props.name}!
                 </h2>
-                <Image
+                <img
                   src={props.pokemonGif}
                   alt={props.name}
                   width={0}

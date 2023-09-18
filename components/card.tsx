@@ -27,7 +27,7 @@ export default function Card(props: ICards) {
           className={`h-32 w-24 lg:w-40 flex items-center lg:justify-center `}
         >
           {!props.loading && (
-            <Image
+            <img
               src={props.pokemonImage}
               alt={props.pokemonName}
               width={100}
@@ -54,12 +54,12 @@ export default function Card(props: ICards) {
                 </p>
               </div>
             ))}
-            
+
           </div>
         </div>
 
         <div className="flex items-end mb-5">
-          <Image
+          <img
             src={props.pokemonGif}
             alt={props.pokemonName}
             width={100}

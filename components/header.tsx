@@ -10,7 +10,7 @@ export default function Header(props: IHeader) {
   return (
     <header className="header-app">
       <div className="w-full h-full">
-        <Image
+        <img
           src={"/592678.png"}
           alt={props.title}
           width={0}
