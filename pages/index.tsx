@@ -1,29 +1,34 @@
-import Header from "../components/header";
-import Card from "../components/card";
-import { IPokemonData } from "@/interfaces";
 import { Endpoints } from "@/endpoints";
+import { IPokemonData } from "@/interfaces";
 import React, { useEffect, useState } from "react";
-import InfiniteScroll from "@/components/InfiniteScroll";
+import Card from "../components/card";
+import Header from "../components/header";
 
 export default function Home() {
   const [pokemons, setPokemons] = useState<IPokemonData[]>([]);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const scrollEnd = () => {
-    setCurrentPage((currentPageInsideState) => currentPageInsideState + 1);
-  };
+  const loadMore = () => {
+    setCurrentPage((currentPage) => currentPage + 10);
+  }
 
   useEffect(() => {
-    Endpoints.pokemonList(currentPage).then((response) =>
-      setPokemons((currentPokemons) => [...currentPokemons, ...response])
-    );
+    const fetchPokemons = async () => {
+      const response = await Endpoints.pokemonList(currentPage);
+      setPokemons((currentPokemons) => [...currentPokemons, ...response]);
+    }
+
+    fetchPokemons();
+
+
+
   }, [currentPage]);
 
   return (
-    <InfiniteScroll onScrollEnd={scrollEnd}>
+    <div>
       <Header title="PokéDex" />
-      <div className="bg-white">
-        <div className="grid justify-items-center grid-cols-1 mt-20 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 ml-5 mb-20 mr-5">
+      <div className="mx-5 flex-col bg-white">
+        <div className="grid justify-items-center grid-cols-1  md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mb-20">
           {!pokemons.length && (
             <React.Fragment>
               {[1, 2, 3].map(() => (
@@ -57,8 +62,17 @@ export default function Home() {
               loading={false}
             />
           ))}
+
         </div>
       </div>
-    </InfiniteScroll>
+      <div className="w-full flex justify-center items-center p-5">
+        <button
+          onClick={loadMore}
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Load More
+        </button>
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import localFont from "next/font/local";
 const myFont = localFont({ src: "./fonts/pokemon-solid.ttf" });
 
@@ -8,7 +7,7 @@ interface IHeader {
 
 export default function Header(props: IHeader) {
   return (
-    <header className="header-app">
+    <header className="header-app mb-10">
       <div className="w-full h-full">
         <img
           src={"/592678.png"}

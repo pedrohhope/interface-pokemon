@@ -10,8 +10,7 @@ export const api = axios.create({
 });
 
 export class Endpoints {
-  static pokemonList = async (page: number) => {
-    const offset = page === 1 ? 0 : (page - 1) * 10;
+  static pokemonList = async (offset: number) => {
 
     const { data } = await api.get(`/pokemon?offset=${offset}&limit=10`);
 
@@ -30,4 +29,10 @@ export class Endpoints {
 
     return data;
   };
+
+  static searchPokemon = async (name: string) => {
+    const { data } = await api.get(`/pokemon/${name}`);
+
+    return data;
+  }
 }
